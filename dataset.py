@@ -250,17 +250,45 @@ class SatelliteDatasetGenerator:
 
     def generate_dataset(self, num_samples=150, seed=42):
         """
-        Generates a balanced multi-sensor remote sensing dataset.
+        Generates a balanced multi-sensor remote sensing dataset with GIS coordinates and virtual grid positions.
         """
         np.random.seed(seed)
         dataset = []
+        
+        # Grid dimensions for spatial graph
+        cols_count = int(np.ceil(np.sqrt(num_samples)))
+        
+        # Coordinate bounds for real-world biomes
+        biome_bounds = {
+            'urban': {'lat': (35.6, 35.8), 'lon': (139.5, 139.8)},      # Tokyo
+            'forest': {'lat': (-4.0, -2.5), 'lon': (-63.0, -61.0)},     # Amazon
+            'water': {'lat': (46.3, 46.5), 'lon': (6.3, 6.8)},          # Lake Geneva
+            'farmland': {'lat': (41.0, 42.5), 'lon': (-94.0, -92.0)},   # Iowa
+            'desert': {'lat': (22.0, 25.0), 'lon': (24.0, 27.0)}        # Sahara
+        }
+        
         for i in range(num_samples):
             class_name = self.classes[i % len(self.classes)]
-            # Add roads and rivers with reasonable probabilities
             has_river = (np.random.rand() < 0.25) and (class_name != 'water')
             has_road = (np.random.rand() < 0.25)
             
             patch = self.generate_patch(class_name, has_river, has_road)
+            
+            # Virtual grid position
+            row = i // cols_count
+            col = i % cols_count
+            patch['row'] = row
+            patch['col'] = col
+            
+            # Generate lat/lon coordinates
+            bounds = biome_bounds[class_name]
+            lat = np.random.uniform(bounds['lat'][0], bounds['lat'][1])
+            lon = np.random.uniform(bounds['lon'][0], bounds['lon'][1])
+                
+            patch['lat'] = float(lat)
+            patch['lon'] = float(lon)
+            patch['id'] = i
+            
             dataset.append(patch)
         return dataset
 
@@ -347,3 +375,25 @@ def extract_text_features(description, vocabulary):
         features = features / norm
         
     return features
+
+def build_spatial_graph(dataset):
+    """
+    Builds a spatial neighborhood graph connecting neighboring patches on a virtual grid.
+    Adds edges between adjacent grid cells (up, down, left, right).
+    Returns a networkx Graph object.
+    """
+    import networkx as nx
+    G = nx.Graph()
+    for idx, patch in enumerate(dataset):
+        G.add_node(idx, class_name=patch['class'], lat=patch['lat'], lon=patch['lon'], row=patch['row'], col=patch['col'])
+    
+    grid_map = {(p['row'], p['col']): idx for idx, p in enumerate(dataset)}
+    
+    for idx, patch in enumerate(dataset):
+        r, c = patch['row'], patch['col']
+        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+            neighbor = (r + dr, c + dc)
+            if neighbor in grid_map:
+                G.add_edge(idx, grid_map[neighbor])
+                
+    return G

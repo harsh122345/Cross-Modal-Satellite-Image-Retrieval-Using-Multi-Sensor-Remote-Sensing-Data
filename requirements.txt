@@ -3,3 +3,12 @@ pillow
 scikit-learn
 streamlit
 matplotlib
+torch
+torchvision
+transformers
+faiss-cpu
+networkx
+folium
+streamlit-folium
+plotly
+scipy
