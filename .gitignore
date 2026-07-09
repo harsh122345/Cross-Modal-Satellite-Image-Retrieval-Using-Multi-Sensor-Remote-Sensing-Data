@@ -11,4 +11,3 @@ ENV/
 .vscode/
 .idea/
 .streamlit/config.toml
-.gemini/
