@@ -168,6 +168,216 @@ LOCALIZATION = {
         "search_btn": "Rechercher dans la Base de Données",
         "latency_cmp": "Comparaison de Latence (ms)",
         "gnn_refine": "Activer le Raffinement de Voisinage GNN (Lissage Contextuel Spatial)"
+    },
+    "ja": {
+        "title": "🛰️ マルチセンサー衛星画像検索",
+        "subtitle": "トランスフォーマーとGNNを用いた光学、レーダー(SAR)、テキスト間のクロスモーダル検索",
+        "sidebar_settings": "⚙️ 設定パネル",
+        "lang_select": "🌐 言語選択",
+        "dataset_config": "1. データセット設定",
+        "num_scenes": "シーン数",
+        "gen_seed": "ジェネレータ・シード",
+        "regen_btn": "📦 データセット再生成",
+        "model_select": "2. 学習モデル選択",
+        "epochs": "学習エポック数",
+        "lr": "学習率",
+        "train_btn": "🔥 アクティブモデルの学習",
+        "reset_btn": "🔄 モデルリセット",
+        "model_status": "モデルステータス:",
+        "epochs_trained": "学習済みエポック",
+        "tab_gis": "🌍 GIS エクスプローラー",
+        "tab_models": "🧠 モデルと潜在PCA",
+        "tab_retrieve": "🔍 リアルタイム検索 (FAISS)",
+        "tab_explain": "👁️ 説明可能性 (Grad-CAM)",
+        "tab_cloud": "🚢 Dockerとクラウド",
+        "desc_gis": "実世界のバイオーム座標にマッピングされた、位置情報付きの衛星画像を探索します。",
+        "desc_models": "モデルを学習し、3D共同埋め込み空間におけるアライメントを検証します。",
+        "desc_retrieve": "最適化されたFAISSインデックスを使用して、異なるセンサー間の迅速なクエリを実行します。",
+        "desc_explain": "識別的な特徴を強調表示するニューラルアテンションマップを確認します。",
+        "desc_cloud": "本番環境用のコンテナ化とデプロイ手順。",
+        "urban": "都市 (東京、日本)",
+        "forest": "森林 (アマゾンの熱帯雨林)",
+        "water": "水域 (レマン湖、スイス)",
+        "farmland": "農地 (アイオワ州コーンベルト、米国)",
+        "desert": "砂漠 (サハラ砂漠、アルジェリア)",
+        "class_label": "地被分類クラス",
+        "river": "蛇行する河川あり",
+        "road": "直線道路あり",
+        "description": "テキスト説明",
+        "query_config": "クエリ設定",
+        "query_mod": "クエリのモダリティ",
+        "db_mod": "データベースのモダリティ",
+        "search_btn": "モダリティデータベースの検索",
+        "latency_cmp": "レイテンシ比較 (ミリ秒)",
+        "gnn_refine": "GNN近傍リファインメントを有効化 (空間コンテキスト平滑化)"
+    },
+    "ru": {
+        "title": "🛰️ Мультисенсорный поиск спутниковых снимков",
+        "subtitle": "Кросс-модальный поиск между оптическими снимками, радаром (SAR) и текстом с помощью трансформеров и GNN",
+        "sidebar_settings": "⚙️ Панель конфигурации",
+        "lang_select": "🌐 Выбрать язык",
+        "dataset_config": "1. Конфигурация датасета",
+        "num_scenes": "Количество сцен",
+        "gen_seed": "Сид генератора",
+        "regen_btn": "📦 Регенерировать датасет",
+        "model_select": "2. Выбрать модель для обучения",
+        "epochs": "Эпохи обучения",
+        "lr": "Скорость обучения",
+        "train_btn": "🔥 Обучить активную модель",
+        "reset_btn": "🔄 Сбросить модель",
+        "model_status": "Статус модели:",
+        "epochs_trained": "Пройдено эпох",
+        "tab_gis": "🌍 Проводник ГИС",
+        "tab_models": "🧠 Модели и латентный PCA",
+        "tab_retrieve": "🔍 Поиск в реальном времени (FAISS)",
+        "tab_explain": "👁️ Объяснимость (Grad-CAM)",
+        "tab_cloud": "🚢 Docker и Облако",
+        "desc_gis": "Исследуйте геолокационные спутниковые снимки на реальных координатах биомов.",
+        "desc_models": "Обучайте модели и анализируйте выравнивание в трехмерном пространстве эмбеддингов.",
+        "desc_retrieve": "Выполняйте быстрые межсенсорные запросы с использованием оптимизированного индекса FAISS.",
+        "desc_explain": "Просматривайте нейронные карты внимания, выделяющие ключевые признаки.",
+        "desc_cloud": "Инструкции по контейнеризации и развертыванию в продакшене.",
+        "urban": "Город (Токио, Япония)",
+        "forest": "Лес (Амазонский дождевой лес)",
+        "water": "Вода (Женевское озеро, Швейцария)",
+        "farmland": "Сельхозугодья (Кукурузный пояс Айовы, США)",
+        "desert": "Пустыня (Пустыня Сахара, Алжир)",
+        "class_label": "Класс земного покрова",
+        "river": "Есть извилистая река",
+        "road": "Есть прямая дорога",
+        "description": "Текстовое описание",
+        "query_config": "Настройка запроса",
+        "query_mod": "Модальность запроса",
+        "db_mod": "Модальность базы данных",
+        "search_btn": "Искать в базе данных",
+        "latency_cmp": "Сравнение задержки (мс)",
+        "gnn_refine": "Включить уточнение соседей GNN (пространственное сглаживание)"
+    },
+    "de": {
+        "title": "🛰️ Multi-Sensor Satellitenbild-Abruf",
+        "subtitle": "Modalkreuzender Abruf zwischen optischen Bildern, Radar (SAR) und Text mittels Transformern & GNNs",
+        "sidebar_settings": "⚙️ Konfigurationsmenü",
+        "lang_select": "🌐 Sprache wählen",
+        "dataset_config": "1. Datensatz-Konfiguration",
+        "num_scenes": "Anzahl der Szenen",
+        "gen_seed": "Generator Seed",
+        "regen_btn": "📦 Datensatz regenerieren",
+        "model_select": "2. Modell zum Trainieren wählen",
+        "epochs": "Trainings-Epochen",
+        "lr": "Lernrate",
+        "train_btn": "🔥 Aktives Modell trainieren",
+        "reset_btn": "🔄 Modell zurücksetzen",
+        "model_status": "Modellstatus:",
+        "epochs_trained": "Trainierte Epochen",
+        "tab_gis": "🌍 GIS-Explorer",
+        "tab_models": "🧠 Modelle & latente PCA",
+        "tab_retrieve": "🔍 Echtzeit-Abruf (FAISS)",
+        "tab_explain": "👁️ Erklärbarkeit (Grad-CAM)",
+        "tab_cloud": "🚢 Docker & Cloud",
+        "desc_gis": "Erkunden Sie geolokalisierte Satellitenbilder auf realen Biom-Koordinaten.",
+        "desc_models": "Trainieren Sie Modelle und analysieren Sie die Ausrichtung im gemeinsamen 3D-Embedding-Raum.",
+        "desc_retrieve": "Führen Sie schnelle sensorübergreifende Abfragen mit optimierter FAISS-Indizierung durch.",
+        "desc_explain": "Untersuchen Sie neuronale Aufmerksamkeitskarten, die markante Merkmale hervorheben.",
+        "desc_cloud": "Produktions-Containerisierung und Bereitstellungsanweisungen.",
+        "urban": "Städtisch (Tokio, Japan)",
+        "forest": "Wald (Amazonas-Regenwald)",
+        "water": "Wasser (Genfersee, Schweiz)",
+        "farmland": "Ackerland (Iowa Corn Belt, USA)",
+        "desert": "Wüste (Sahara-Wüste, Algerien)",
+        "class_label": "Bodenbedeckungsklasse",
+        "river": "Hat gewundenen Fluss",
+        "road": "Hat gerade Straße",
+        "description": "Textbeschreibung",
+        "query_config": "Abfragekonfiguration",
+        "query_mod": "Abfragemodalität",
+        "db_mod": "Datenbankmodalität",
+        "search_btn": "Modalitätsdatenbank durchsuchen",
+        "latency_cmp": "Latenzvergleich (ms)",
+        "gnn_refine": "GNN Nachbarschafts-Refinement aktivieren (räumliche Kontext-Glättung)"
+    },
+    "zh": {
+        "title": "🛰️ 多传感器卫星图像检索系统",
+        "subtitle": "利用 Transformer 与图神经网络（GNN）实现光学、雷达（SAR）和文本之间的跨模态检索",
+        "sidebar_settings": "⚙️ 配置面板",
+        "lang_select": "🌐 选择语言",
+        "dataset_config": "1. 数据集配置",
+        "num_scenes": "场景数量",
+        "gen_seed": "生成器随机种子",
+        "regen_btn": "📦 重新生成数据集",
+        "model_select": "2. 选择训练模型",
+        "epochs": "训练轮数 (Epochs)",
+        "lr": "学习率",
+        "train_btn": "🔥 训练当前模型",
+        "reset_btn": "🔄 重置模型",
+        "model_status": "模型状态:",
+        "epochs_trained": "已训练轮数",
+        "tab_gis": "🌍 GIS 地理信息资源管理器",
+        "tab_models": "🧠 模型与潜在空间 PCA",
+        "tab_retrieve": "🔍 实时检索 (FAISS)",
+        "tab_explain": "👁️ 可解释性 (Grad-CAM)",
+        "tab_cloud": "🚢 Docker 与云部署",
+        "desc_gis": "在真实世界生物群落坐标上探索带地理位置标记的卫星图像。",
+        "desc_models": "训练模型并在 3D 联合嵌入空间中查看对齐效果。",
+        "desc_retrieve": "利用优化后的 FAISS 索引执行快速跨传感器查询。",
+        "desc_explain": "查看突出显示判别性特征的神经网络注意力热力图。",
+        "desc_cloud": "生产环境容器化与云端部署指南。",
+        "urban": "城市 (日本东京)",
+        "forest": "森林 (亚马逊雨林)",
+        "water": "水域 (瑞士日内瓦湖)",
+        "farmland": "农田 (美国爱荷华州玉米带)",
+        "desert": "沙漠 (阿尔及利亚撒哈拉沙漠)",
+        "class_label": "土地覆盖类别",
+        "river": "包含弯曲河流",
+        "road": "包含直线道路",
+        "description": "文本描述",
+        "query_config": "查询配置",
+        "query_mod": "查询模态",
+        "db_mod": "数据库模态",
+        "search_btn": "搜索模态数据库",
+        "latency_cmp": "延迟对比 (毫秒)",
+        "gnn_refine": "启用 GNN 邻域优化（空间上下文平滑）"
+    },
+    "hi": {
+        "title": "🛰️ मल्टी-सेंसर सैटेलाइट इमेज रिट्रीवल",
+        "subtitle": "ट्रांसफॉर्मर्स और GNN का उपयोग करके ऑप्टिकल, रडार (SAR) और टेक्स्ट के बीच क्रॉस-मोडल खोज",
+        "sidebar_settings": "⚙️ कॉन्फ़िगरेशन पैनल",
+        "lang_select": "🌐 भाषा चुनें",
+        "dataset_config": "1. डेटासेट कॉन्फ़िगरेशन",
+        "num_scenes": "दृश्यों (Scenes) की संख्या",
+        "gen_seed": "जेनरेटर सीड",
+        "regen_btn": "📦 डेटासेट फिर से बनाएं",
+        "model_select": "2. प्रशिक्षित करने के लिए मॉडल चुनें",
+        "epochs": "ट्रेनिंग एपॉक्स (Epochs)",
+        "lr": "लर्निंग रेट",
+        "train_btn": "🔥 सक्रिय मॉडल को प्रशिक्षित करें",
+        "reset_btn": "🔄 मॉडल रीसेट करें",
+        "model_status": "मार्कअप स्थिति:",
+        "epochs_trained": "प्रशिक्षित एपॉक्स",
+        "tab_gis": "🌍 GIS एक्सप्लोरर",
+        "tab_models": "🧠 मॉडल और लेटेंट PCA",
+        "tab_retrieve": "🔍 रीयल-टाइम खोज (FAISS)",
+        "tab_explain": "👁️ स्पष्टीकरण (Grad-CAM)",
+        "tab_cloud": "🚢 डॉकर और क्लाउड",
+        "desc_gis": "वास्तविक दुनिया के बायोम निर्देशांकों पर आधारित जियोलोकेटेड सैटेलाइट पैच का पता लगाएं।",
+        "desc_models": "मॉडल को प्रशिक्षित करें और 3D संयुक्त एम्बेडिंग स्पेस में संरेखण का निरीक्षण करें।",
+        "desc_retrieve": "अनुकूलित FAISS इंडेक्सिंग का उपयोग करके त्वरित क्रॉस-सेंसर क्वेरी चलाएं।",
+        "desc_explain": "प्रमुख विशेषताओं को उजागर करने वाले न्यूरल अटेंशन मैप्स का निरीक्षण करें।",
+        "desc_cloud": "उत्पादन कंटेनराइजेशन और क्लाउड पर डिप्लॉयमेंट के निर्देश।",
+        "urban": "शहरी (टोक्यो, जापान)",
+        "forest": "वन (अमेज़न वर्षावन)",
+        "water": "जल निकाय (जिनेवा झील, स्विट्जरलैंड)",
+        "farmland": "कृषि भूमि (आयोवा कॉर्न बेल्ट, यूएसए)",
+        "desert": "रेगिस्तान (सहारा रेगिस्तान, अल्जीरिया)",
+        "class_label": "लैंड कवर क्लास",
+        "river": "घुमावदार नदी है",
+        "road": "सीधी सड़क है",
+        "description": "टेक्स्ट विवरण",
+        "query_config": "क्वेरी कॉन्फ़िगरेशन",
+        "query_mod": "क्वेरी मोडलिटी",
+        "db_mod": "डेटाबेस मोडलिटी",
+        "search_btn": "डेटाबेस में खोजें",
+        "latency_cmp": "लेटेंसी तुलना (ms)",
+        "gnn_refine": "GNN नेबरहुड रिफाइनमेंट सक्षम करें (स्थानिक संदर्भ सुचारू)"
     }
 }
 
@@ -239,12 +449,23 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- Sidebar UI Language Switcher ---
-lang_display = st.sidebar.selectbox("🌐 Select Language / Seleccione Idioma / Langue", options=["English", "Español", "Français"])
+lang_display = st.sidebar.selectbox("🌐 Select Language / Idioma / Langue / 言語 / Язык / Sprache / 语言 / भाषा", options=["English", "Español", "Français", "日本語", "Русский", "Deutsch", "中文", "हिन्दी"])
 lang_code = "en"
 if lang_display == "Español":
     lang_code = "es"
 elif lang_display == "Français":
     lang_code = "fr"
+elif lang_display == "日本語":
+    lang_code = "ja"
+elif lang_display == "Русский":
+    lang_code = "ru"
+elif lang_display == "Deutsch":
+    lang_code = "de"
+elif lang_display == "中文":
+    lang_code = "zh"
+elif lang_display == "हिन्दी":
+    lang_code = "hi"
+
 
 def t(key):
     return LOCALIZATION[lang_code].get(key, key)
@@ -481,9 +702,20 @@ with tab_gis:
     
     col_map, col_details = st.columns([3, 2])
     
+    # Initialize selected scene index in session state if not present
+    if 'selected_scene_idx' not in st.session_state:
+        st.session_state.selected_scene_idx = 0
+        
     with col_details:
         st.subheader("Scene Patch Inspector")
-        sample_idx = st.slider("Select Scene Patch ID", 0, len(dataset) - 1, 0)
+        # Slider value linked to st.session_state.selected_scene_idx
+        sample_idx = st.slider(
+            "Select Scene Patch ID", 
+            0, 
+            len(dataset) - 1, 
+            value=int(st.session_state.selected_scene_idx)
+        )
+        st.session_state.selected_scene_idx = sample_idx
         selected_sample = dataset[sample_idx]
         
         st.markdown(f"""
@@ -539,8 +771,27 @@ with tab_gis:
             popup="Selected Scene"
         ).add_to(m)
         
-        # Render Map
-        st_folium(m, height=450, width=700, key="gis_explore_map")
+        # Render Map and capture user clicks
+        map_data = st_folium(m, height=450, width=700, key="gis_explore_map")
+        
+        # Sync clicked marker back to session state and slider
+        if map_data and map_data.get("last_object_clicked"):
+            clicked_lat = map_data["last_object_clicked"].get("lat")
+            clicked_lng = map_data["last_object_clicked"].get("lng")
+            if clicked_lat is not None and clicked_lng is not None:
+                # Find closest dataset item by coordinate distance
+                min_dist = float('inf')
+                closest_idx = st.session_state.selected_scene_idx
+                for idx, item in enumerate(dataset):
+                    dist = (item['lat'] - clicked_lat)**2 + (item['lon'] - clicked_lng)**2
+                    if dist < min_dist:
+                        min_dist = dist
+                        closest_idx = idx
+                
+                # If a matching marker is found within threshold, update and rerun
+                if min_dist < 1e-3 and closest_idx != st.session_state.selected_scene_idx:
+                    st.session_state.selected_scene_idx = closest_idx
+                    st.rerun()
 
 # ========================================================
 # TAB 2: MODELS & LATENT PCA

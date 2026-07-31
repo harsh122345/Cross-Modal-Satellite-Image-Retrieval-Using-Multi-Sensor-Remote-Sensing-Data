@@ -154,8 +154,8 @@ class Dinov2Wrapper:
         try:
             from transformers import AutoImageProcessor, Dinov2Model
             print("Attempting to load DINOv2 model...")
-            self.processor = AutoImageProcessor.from_pretrained("facebook/dinov2-tiny", local_files_only=False)
-            self.model = Dinov2Model.from_pretrained("facebook/dinov2-tiny", local_files_only=False)
+            self.processor = AutoImageProcessor.from_pretrained("facebook/dinov2-small", local_files_only=False)
+            self.model = Dinov2Model.from_pretrained("facebook/dinov2-small", local_files_only=False)
             self.model.to(DEVICE)
             self.model.eval()
             print("Successfully loaded pre-trained DINOv2 model.")
